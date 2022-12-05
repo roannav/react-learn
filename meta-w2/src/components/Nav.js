@@ -6,6 +6,7 @@ function Nav() {
   return (
     <nav className="main-nav">
       <button onClick={()=>navigate("/about")}>About</button>
+      <button onClick={()=>navigate("/buttons")}>Button App</button>
       <button onClick={()=>navigate("/cards")}>Card App</button>
       <button onClick={()=>navigate("/form")}>Form App</button>
       <button onClick={()=>navigate("/fruits")}>Fruit App</button>
