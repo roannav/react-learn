@@ -9,6 +9,7 @@ import FruitsApp from "./components/FruitsApp";
 import GuessNumberGame from "./components/GuessNumberGame";
 import Home from "./components/Home";
 import Input from "./components/Input";
+import MealsApp from "./meals/MealsApp";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/guess-number-game" element={<GuessNumberGame/>}/>
         <Route exact path="/home" element={<Home/>}/>
         <Route exact path="/input" element={<Input/>}/>
+        <Route exact path="/meals" element={<MealsApp/>}/>
       </Routes>
       </BrowserRouter>
     </div>

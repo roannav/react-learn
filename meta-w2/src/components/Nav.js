@@ -13,14 +13,7 @@ function Nav() {
       <button onClick={()=>navigate("/guess-number-game")}>Guess Number Game</button>
       <button onClick={()=>navigate("/home")}>Home</button>
       <button onClick={()=>navigate("/input")}>Input</button>
-      {/*
-      <ul>
-        <li>Home</li>
-        <li>Articles</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-      */}
+      <button onClick={()=>navigate("/meals")}>Meals App</button>
     </nav>
   );
 };
