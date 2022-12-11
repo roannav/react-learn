@@ -2,6 +2,9 @@
 node_modules
 package-lock.json
 
+# zip files
+*.zip
+
 # temp
 temp
 */temp
