@@ -97,7 +97,7 @@ function ComplexCalculator() {
     <form>
       <Row justify="center">
       <div className="results-display">
-        {firstNumber} {(operand!=='none') && operand } {(operand!=='none') && !isNaN(secondNumber) && secondNumber}
+        {Number(firstNumber.toFixed(6))} {(operand!=='none') && operand } {(operand!=='none') && !isNaN(secondNumber) && secondNumber}
       </div>
       </Row>
       <Row justify="center">
