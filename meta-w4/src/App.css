@@ -1,0 +1,40 @@
+* {
+  font-family: sans-serif;
+}
+.App {
+  padding:50px;
+}
+.calculator-container {
+  background-color: lightblue;
+  padding: 50px 0;
+}
+input,
+button {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+input {
+  display: block;
+  margin-bottom: 20px;
+}
+button {
+  border: 1px solid gray;
+  background: whitesmoke;
+  margin-right: 5px;
+}
+button.calc-button {
+  background: lightsalmon;
+  color: white;
+  font-weight:800;
+  margin: 1px;
+  width:50px;
+}
+button.number-button {
+  font-weight:800;
+  margin: 1px;
+  width:50px;
+}
+button.equals-button {
+  background: tomato; 
+}
