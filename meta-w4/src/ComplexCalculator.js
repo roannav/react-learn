@@ -1,6 +1,8 @@
 import { useState, } from "react";
 import 'antd/dist/reset.css';
 import {Col, Row, Button} from 'antd';
+import NumberButton from './NumberButton';
+import ActionButton from './ActionButton';
 
 function ComplexCalculator() { 
   const [firstNumber, setFirstNumber] = useState(0); 
@@ -99,27 +101,27 @@ function ComplexCalculator() {
       </div>
       </Row>
       <Row justify="center">
-        <Button size="large" className="number-button" name="7" onClick={ (e)  => handleNumberPress(e, 7) }>7</Button>
-        <Button size="large" className="number-button" name="8" onClick={ (e) => handleNumberPress(e, 8) }>8</Button>
-        <Button size="large" className="number-button" name="9" onClick={ (e) => handleNumberPress(e, 9) }>9</Button>
-        <Button size="large" className="calc-button" onClick={(e) => resetInput(e) }>AC</Button>
+        <NumberButton num={7} handleClick={(e) => handleNumberPress(e, 7)} />
+        <NumberButton num={8} handleClick={(e) => handleNumberPress(e, 8)} />
+        <NumberButton num={9} handleClick={(e) => handleNumberPress(e, 9)} />
+        <ActionButton action="AC" handleClick={(e) => resetInput(e) } />
       </Row>
       <Row justify="center">
-        <Button size="large" className="number-button" name="4" onClick={ (e) => handleNumberPress(e, 4) }>4</Button>
-        <Button size="large" className="number-button" name="5" onClick={ (e) => handleNumberPress(e, 5) }>5</Button>
-        <Button size="large" className="number-button" name="6" onClick={ (e) => handleNumberPress(e, 6) }>6</Button>
-        <Button size="large" className="calc-button" onClick={ plus }>+</Button>
+        <NumberButton num={4} handleClick={(e) => handleNumberPress(e, 4)} />
+        <NumberButton num={5} handleClick={(e) => handleNumberPress(e, 5)} />
+        <NumberButton num={6} handleClick={(e) => handleNumberPress(e, 6)} />
+        <ActionButton action='+' handleClick={(e) => plus(e)} />
       </Row>
       <Row justify="center">
-        <Button size="large" className="number-button" name="1" onClick={ (e) => handleNumberPress(e, 1) }>1</Button>
-        <Button size="large" className="number-button" name="2" onClick={ (e) => handleNumberPress(e, 2) }>2</Button>
-        <Button size="large" className="number-button" name="3" onClick={ (e) => handleNumberPress(e, 3) }>3</Button>
-        <Button size="large" className="calc-button" onClick={ minus }>-</Button>
+        <NumberButton num={1} handleClick={(e) => handleNumberPress(e, 1)} />
+        <NumberButton num={2} handleClick={(e) => handleNumberPress(e, 2)} />
+        <NumberButton num={3} handleClick={(e) => handleNumberPress(e, 3)} />
+        <ActionButton action='-' handleClick={(e) => minus(e)} />
       </Row>
       <Row justify="center">
-        <Button size="large" className="number-button" name="0" onClick={ (e) => handleNumberPress(e, 0) }>0</Button>
-        <Button size="large" className="calc-button" onClick={ times }>x</Button>
-        <Button size="large" className="calc-button" onClick={ divide }>÷</Button>
+        <NumberButton num={0} handleClick={(e) => handleNumberPress(e, 0)} />
+        <ActionButton action='x' handleClick={(e) => times(e)} />
+        <ActionButton action='÷' handleClick={(e) => divide(e)} />
         <Button size="large" className="calc-button equals-button" onClick={ equals }>=</Button>
       </Row>
     </form>
