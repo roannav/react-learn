@@ -1,6 +1,6 @@
 import { useState, } from "react";
 import 'antd/dist/reset.css';
-import {Col, Row, InputNumber, Button} from 'antd';
+import {Col, Row, Button} from 'antd';
 
 function ComplexCalculator() { 
   const [firstNumber, setFirstNumber] = useState(0); 
@@ -94,14 +94,9 @@ function ComplexCalculator() {
   return ( 
     <form>
       <Row justify="center">
-      2nd Number: {secondNumber}
-      <br/>
-      Result:
-      <br/>
-      {firstNumber} {(operand!=='none') && operand } {(operand!=='none') && !isNaN(secondNumber) && secondNumber}  
-      </Row>
-      <Row justify="center">
-        <InputNumber style={{ backgroundColor:"whitesmoke", width:"206px", fontWeight:800 }} size="large" disabled={true} value={''} />
+      <div className="resultsDisplay">
+        {firstNumber} {(operand!=='none') && operand } {(operand!=='none') && !isNaN(secondNumber) && secondNumber}
+      </div>
       </Row>
       <Row justify="center">
         <Button size="large" className="number-button" name="7" onClick={ (e)  => handleNumberPress(e, 7) }>7</Button>
