@@ -3,6 +3,8 @@
 For the 4th and final week of 
 [React Basics from Coursera](https://www.coursera.org/learn/react-basics/home/welcome) the assignment is to build the Simplest Working Calculator.  Rather than repost that code here, I created this Unnecessarily Complicated Calculator.
 
+![Calculator made with React](/public/img/calculator.png)
+
 The Unnecessarily Complicated Calculator extends the original version with: 
 - Add Ant Design components and CSS for better appearance.
 - For the buttons, replace the words (like add), with the symbols (like +).
