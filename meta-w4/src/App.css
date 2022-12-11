@@ -8,15 +8,21 @@
   background-color: lightblue;
   padding: 50px 0;
 }
-input,
+div.resultsDisplay,
 button {
   font-size: 20px;
   padding: 10px;
   border-radius: 5px;
 }
-input {
-  display: block;
-  margin-bottom: 20px;
+div.resultsDisplay {
+  background-color:whitesmoke;
+  width:206px;
+  height:40px;
+  font-weight:800;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  padding-left: 18px;
+  letter-spacing: 0.1em;
 }
 button {
   border: 1px solid gray;
