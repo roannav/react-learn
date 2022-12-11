@@ -8,26 +8,17 @@
   background-color: lightblue;
   padding: 50px 0;
 }
-div.resultsDisplay,
-button {
-  font-size: 20px;
-  padding: 10px;
-  border-radius: 5px;
-}
-div.resultsDisplay {
+div.results-display {
   background-color:whitesmoke;
-  width:206px;
-  height:40px;
-  font-weight:800;
   border-radius: 8px;
-  margin-bottom: 5px;
-  padding-left: 18px;
+  font-weight:800;
+  font-size: 20px;
+  height:40px;
   letter-spacing: 0.1em;
-}
-button {
-  border: 1px solid gray;
-  background: whitesmoke;
-  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  padding-left: 18px;
+  width:206px;
 }
 button.calc-button {
   background: lightsalmon;
