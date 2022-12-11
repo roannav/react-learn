@@ -1,22 +1,11 @@
-import {
-  useState,
-  useRef
-} from "react"; 
+import { useState, } from "react";
 import 'antd/dist/reset.css';
 import {Col, Row, InputNumber, Button} from 'antd';
 
 function ComplexCalculator() { 
-  const inputRef = useRef(null); 
-  const resultRef = useRef(null); 
-
-  // This is what is displayed in InputNumber
-  const [result, setResult] = useState('0'); 
-  // TODO: maybe this is not state, but just calculated.
-
+  const [result, setResult] = useState('0'); // displayed in InputNumber
   const [firstNumber, setFirstNumber] = useState(0); 
-
   const [operand, setOperand] = useState('none');
-
   const [secondNumber, setSecondNumber] = useState(0); 
  
   function plus(e) { 
@@ -104,55 +93,47 @@ function ComplexCalculator() {
     console.log(number);
     let n = number;
     if (operand === "none") {
-      if (Number.isInteger(firstNumber)) {
-        n += firstNumber * 10;
-      } else {
-        n = Number.parseFloat(firstNumber.toString() + number);
-      }
+      n = Number.parseFloat(firstNumber.toString() + number);
       setFirstNumber(n);
       setResult(String(n));
     } else {
-      if (Number.isInteger(secondNumber)) {
-        n += secondNumber * 10;
-      } else {
-        n = Number.parseFloat(secondNumber.toString() + number);
-      }
+      n = Number.parseFloat(secondNumber.toString() + number);
       setSecondNumber(n);
       setResult(result + String(number));
     }
   }
 
   return ( 
-      <form> 
-        <Row justify="center">
-          <InputNumber style={{ backgroundColor:"whitesmoke", width:"206px", fontWeight:800 }} size="large" disabled={true} value={result} />
-        </Row>
-        <Row justify="center">
-          <Button size="large" className="number-button" name="7" onClick={ (e)  => handleNumberPress(e, 7) }>7</Button> 
-          <Button size="large" className="number-button" name="8" onClick={ (e) => handleNumberPress(e, 8) }>8</Button> 
-          <Button size="large" className="number-button" name="9" onClick={ (e) => handleNumberPress(e, 9) }>9</Button> 
-          <Button size="large" className="calc-button" onClick={(e) => { resetInput(e); resetResult(e); } }>AC</Button> 
-        </Row>
-        <Row justify="center">
-          <Button size="large" className="number-button" name="4" onClick={ (e) => handleNumberPress(e, 4) }>4</Button> 
-          <Button size="large" className="number-button" name="5" onClick={ (e) => handleNumberPress(e, 5) }>5</Button> 
-          <Button size="large" className="number-button" name="6" onClick={ (e) => handleNumberPress(e, 6) }>6</Button> 
-          <Button size="large" className="calc-button" onClick={ plus }>+</Button> 
-        </Row>
-        <Row justify="center">
-          <Button size="large" className="number-button" name="1" onClick={ (e) => handleNumberPress(e, 1) }>1</Button> 
-          <Button size="large" className="number-button" name="2" onClick={ (e) => handleNumberPress(e, 2) }>2</Button> 
-          <Button size="large" className="number-button" name="3" onClick={ (e) => handleNumberPress(e, 3) }>3</Button> 
-          <Button size="large" className="calc-button" onClick={ minus }>-</Button> 
-        </Row>
-        <Row justify="center">
-          <Button size="large" className="number-button" name="0" onClick={ (e) => handleNumberPress(e, 0) }>0</Button> 
-          <Button size="large" className="calc-button" onClick={ times }>x</Button> 
-          <Button size="large" className="calc-button" onClick={ divide }>÷</Button> 
-          <Button size="large" className="calc-button equals-button" onClick={ equals }>=</Button> 
-        </Row>
-      </form> 
-  ); 
-} 
- 
-export default ComplexCalculator; 
+    <form>
+      <Row justify="center">
+        <InputNumber style={{ backgroundColor:"whitesmoke", width:"206px", fontWeight:800 }} size="large" disabled={true} value={result} />
+      </Row>
+      <Row justify="center">
+        <Button size="large" className="number-button" name="7" onClick={ (e)  => handleNumberPress(e, 7) }>7</Button>
+        <Button size="large" className="number-button" name="8" onClick={ (e) => handleNumberPress(e, 8) }>8</Button>
+        <Button size="large" className="number-button" name="9" onClick={ (e) => handleNumberPress(e, 9) }>9</Button>
+        <Button size="large" className="calc-button" onClick={(e) => { resetInput(e); resetResult(e); } }>AC</Button>
+      </Row>
+      <Row justify="center">
+        <Button size="large" className="number-button" name="4" onClick={ (e) => handleNumberPress(e, 4) }>4</Button>
+        <Button size="large" className="number-button" name="5" onClick={ (e) => handleNumberPress(e, 5) }>5</Button>
+        <Button size="large" className="number-button" name="6" onClick={ (e) => handleNumberPress(e, 6) }>6</Button>
+        <Button size="large" className="calc-button" onClick={ plus }>+</Button>
+      </Row>
+      <Row justify="center">
+        <Button size="large" className="number-button" name="1" onClick={ (e) => handleNumberPress(e, 1) }>1</Button>
+        <Button size="large" className="number-button" name="2" onClick={ (e) => handleNumberPress(e, 2) }>2</Button>
+        <Button size="large" className="number-button" name="3" onClick={ (e) => handleNumberPress(e, 3) }>3</Button>
+        <Button size="large" className="calc-button" onClick={ minus }>-</Button>
+      </Row>
+      <Row justify="center">
+        <Button size="large" className="number-button" name="0" onClick={ (e) => handleNumberPress(e, 0) }>0</Button>
+        <Button size="large" className="calc-button" onClick={ times }>x</Button>
+        <Button size="large" className="calc-button" onClick={ divide }>÷</Button>
+        <Button size="large" className="calc-button equals-button" onClick={ equals }>=</Button>
+      </Row>
+    </form>
+  );
+}
+
+export default ComplexCalculator;
