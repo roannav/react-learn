@@ -3,56 +3,47 @@ import 'antd/dist/reset.css';
 import {Col, Row, InputNumber, Button} from 'antd';
 
 function ComplexCalculator() { 
-  const [result, setResult] = useState('0'); // displayed in InputNumber
   const [firstNumber, setFirstNumber] = useState(0); 
   const [operand, setOperand] = useState('none');
-  const [secondNumber, setSecondNumber] = useState(0); 
+  const [secondNumber, setSecondNumber] = useState(NaN); 
  
   function plus(e) { 
     e.preventDefault(); 
-    if (result !== "undefined") {
+    if (firstNumber !== "undefined") {
       setOperand('+');
-      setSecondNumber(0);
-      setResult(result + " + ");
+      setSecondNumber(NaN);
     }
   }; 
  
   function minus(e) { 
     e.preventDefault(); 
-    if (result !== "undefined") {
+    if (firstNumber !== "undefined") {
       setOperand('-');
-      setSecondNumber(0);
-      setResult(result + " - ");
+      setSecondNumber(NaN);
     }
   };
  
   function times(e) { 
     e.preventDefault(); 
-    if (result !== "undefined") {
+    if (firstNumber !== "undefined") {
       setOperand('x');
-      setSecondNumber(0);
-      setResult(result + " x ");
+      setSecondNumber(NaN);
     }
   }; 
  
   function divide(e) { 
     e.preventDefault(); 
-    if (result !== "undefined") {
+    if (firstNumber !== "undefined") {
       setOperand('÷');
-      setSecondNumber(0);
-      setResult(result + " ÷ ");
+      setSecondNumber(NaN);
     }
   };
  
   function resetInput(e) { 
     e.preventDefault(); 
     setFirstNumber(0);
-    setSecondNumber(0);
+    setSecondNumber(NaN);
     setOperand('none');
-  }; 
- 
-  function resetResult(e) { 
-    setResult('0'); 
   }; 
  
   function equals(e) { 
@@ -70,9 +61,9 @@ function ComplexCalculator() {
         break;
       case '÷':
         if (secondNumber === 0) {
-          setFirstNumber(0);
+          // divide by 0, results in "undefined"
+          setFirstNumber('undefined');
           setOperand('none');
-          setResult("undefined");  // divide by 0, results in "undefined"
           return;
         }
         r = firstNumber / secondNumber;
@@ -84,7 +75,6 @@ function ComplexCalculator() {
     }
 
     setFirstNumber(r);
-    setResult(String(r));
     setOperand('none');
   }
 
@@ -95,24 +85,29 @@ function ComplexCalculator() {
     if (operand === "none") {
       n = Number.parseFloat(firstNumber.toString() + number);
       setFirstNumber(n);
-      setResult(String(n));
     } else {
-      n = Number.parseFloat(secondNumber.toString() + number);
+      n = isNaN(secondNumber) ? number : Number.parseFloat(secondNumber.toString() + number);
       setSecondNumber(n);
-      setResult(result + String(number));
     }
   }
 
   return ( 
     <form>
       <Row justify="center">
-        <InputNumber style={{ backgroundColor:"whitesmoke", width:"206px", fontWeight:800 }} size="large" disabled={true} value={result} />
+      2nd Number: {secondNumber}
+      <br/>
+      Result:
+      <br/>
+      {firstNumber} {(operand!=='none') && operand } {(operand!=='none') && !isNaN(secondNumber) && secondNumber}  
+      </Row>
+      <Row justify="center">
+        <InputNumber style={{ backgroundColor:"whitesmoke", width:"206px", fontWeight:800 }} size="large" disabled={true} value={''} />
       </Row>
       <Row justify="center">
         <Button size="large" className="number-button" name="7" onClick={ (e)  => handleNumberPress(e, 7) }>7</Button>
         <Button size="large" className="number-button" name="8" onClick={ (e) => handleNumberPress(e, 8) }>8</Button>
         <Button size="large" className="number-button" name="9" onClick={ (e) => handleNumberPress(e, 9) }>9</Button>
-        <Button size="large" className="calc-button" onClick={(e) => { resetInput(e); resetResult(e); } }>AC</Button>
+        <Button size="large" className="calc-button" onClick={(e) => resetInput(e) }>AC</Button>
       </Row>
       <Row justify="center">
         <Button size="large" className="number-button" name="4" onClick={ (e) => handleNumberPress(e, 4) }>4</Button>
