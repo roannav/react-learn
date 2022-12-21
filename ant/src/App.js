@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Card, Col, Row, Layout, Menu, Breadcrumb, Button, DatePicker, Space, Typography, theme, version } from 'antd';
+import { Layout, Menu, Typography, theme } from 'antd';
 
 import {
   DesktopOutlined,
@@ -15,6 +15,7 @@ import './App.css';
 import MainContent from './MainContent';
 
 const { Header, Footer, Sider } = Layout;
+const { Title } = Typography;
 
 function getItem(label, key, icon, children) {
   return {
@@ -52,7 +53,9 @@ function App() {
   {/* make the height be the full height of the browser window,
       even if there is only a little content */}
     <Layout style={{ minHeight: '100vh'}}>
-      <Header style={{ padding:0, background: colorBgContainer }}>antd version: {version}</Header>
+      <Header style={{ padding:0, background: colorBgContainer }}>
+        <Title>Ant Design Playground</Title>
+      </Header>
       <Layout className="site-layout">
         <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
           <div style={{

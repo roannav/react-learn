@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
-import { Card, Col, Row, Layout, Menu, Breadcrumb, Button, DatePicker, Space, Typography, theme, version } from 'antd';
+import { Card, Col, Row, Layout, Breadcrumb, Button, DatePicker, Space, Typography, theme, version } from 'antd';
 
 import 'antd/dist/reset.css';
 import logo from './logo.svg';
 import './App.css';
 
 const { Content } = Layout;
+const { Title, Paragraph, Text, Link } = Typography;
 
 function MainContent() {
   return (
@@ -16,7 +17,12 @@ function MainContent() {
         <Breadcrumb.Item>User</Breadcrumb.Item>
         <Breadcrumb.Item>Bill</Breadcrumb.Item>
       </Breadcrumb>
-      <h1>Just trying out a hodgepodge of various Ant Design components, including Layout, Header, Footer, Sider, Content, Row, Col, Menu, Card, Space, Button, DatePicker, theme, version</h1>
+      <Paragraph>
+      Just trying out a hodgepodge of various Ant Design components, including Layout, Header, Footer, Sider, Content, Row, Col, Menu, Card, Space, Button, DatePicker, Typography, Title, ... 
+      </Paragraph>
+      <Paragraph>
+      Also using Ant Design icons, theme, version, ...
+      </Paragraph>
       {/*
       Without the <Space>, they are stacked vertically, one on top the other,
       without any space between them.
@@ -26,18 +32,19 @@ function MainContent() {
         <DatePicker />
         <Button type="primary">Primary Button</Button>
       </Space>
-      <img src={logo} className="App-logo" alt="logo" />
 
       <div className="site-card-wrapper">
+      <Space direction="vertical" size="large">
         <Row gutter={16}>
           <Col span={8}>
-            <Card title="Card title" bordered={false}>
-              Card content
+            <Card title="Ant Design components" bordered={false}>
+              <p>antd version: {version}</p>
+              <p>theme: {}</p>
             </Card>
           </Col>
           <Col span={8}>
-            <Card title="Card title" bordered={false}>
-              Card content
+            <Card title="React logo" bordered={false}>
+              <img src={logo} className="App-logo" alt="logo" />
             </Card>
           </Col>
           <Col span={8}>
@@ -56,6 +63,7 @@ function MainContent() {
             </Card>
           </Col>
         </Row>
+      </Space>
       </div>
       <Row style={{ width: "100%", border: "1px solid red" }}>
         <Col>test1</Col>
