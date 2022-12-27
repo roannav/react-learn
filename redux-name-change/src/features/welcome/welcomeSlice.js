@@ -31,6 +31,10 @@ export const selectName  = (state) => state.welcome.value;
 // For example: 
 //   `useSelector((state: RootState) => state.counter.value)`
 
-// NOTE: welcomeSlice.reducers property
+// NOTE: welcomeSlice.reducers property of the welcomeSlice.
 // However here we say welcomeSlice.reducer  (singular)
 export default welcomeSlice.reducer;
+
+// NOTE: in app/store.js, when we configureStore(),
+// store's reducer.welcome = welcomeReducer
+

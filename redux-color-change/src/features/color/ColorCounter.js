@@ -12,6 +12,13 @@ export default function ColorCounter() {
   });
   const color = useSelector(selectColorific);
 
+  // Strict Mode means that in index.js, when you call root.render(),
+  // you've wrapped the <Provider> and <App> in <React.StrictMode> tags.
+  // If in Strict Mode, React renders each component 2 times!
+  // Since React DevTools is installed, the second time console.log prints,
+  // it will be in a grey color.
+  // This is why we see 'New render occurred' happening twice.
+
   // run on every render
   useEffect( () => {
     console.log("useEffect1:  New render occurred.  color is ", color);
@@ -49,6 +56,7 @@ export default function ColorCounter() {
 
   return (
     <>
+      <h3>This is a count of the number of times it has changed to this color</h3>
       <p>Blue Count: {colorCount['blue']}</p>
       <p>Cyan Count: {colorCount['cyan']}</p>
       <p>Tomato Count: {colorCount['tomato']}</p>

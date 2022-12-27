@@ -25,7 +25,8 @@ export default function Color() {
   useEffect(() => {
     console.log("useEffect3:  color =", color);
     console.log(h1Element.current);
-    // Change the color of the <h1> text to match the 'color' variable.
+    // Change the color of the <h1> text to match the Redux store's
+    // 'color' variable.
     // h1Element.current is an HTML DOM element object.
     h1Element.current.style.color = color;
   }, [color]); // <- add the color variable here
