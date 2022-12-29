@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
 import {
   // actions
@@ -10,6 +11,41 @@ import {
   // selectors
   selectName,
 } from './animalSlice';
+
+const H6 = styled.h6`
+  color: maroon;
+  font-size: 1em;
+  margin-bottom: 5px;
+`;
+
+const SubmitDiv = styled.div`
+  margin-top: 40px;
+  margin-right: 60px;
+  max-width: 400px;
+  text-align: right;
+`;
+
+const FormGroup = styled.div`
+  margin-bottom: 50px;
+`;
+
+const Label = styled.label`
+  color: maroon;
+  font-weight: bold;
+`;
+
+const Input = styled.input`
+  margin-left: 20px;
+`;
+
+const Button = styled.button`
+  background: transparent;
+  border-radius: 5px;
+  border: 2px solid maroon;
+  color: maroon;
+  margin: 0.25em 0.5em;
+  padding: 0.25em 1em;
+`;
 
 export function Animal() {
   // get the name from the Redux store
@@ -71,38 +107,38 @@ export function Animal() {
   return (
     <form onSubmit={handleSubmit}>
       <h1>{nameFromTheStore} named {inputAnimal.name}</h1>
-      <div>
-        <label>
+      <FormGroup>
+        <Label>
           Enter animal name: 
-          <input
+          <Input
             aria-label="Set input animal name"
             value={inputAnimal.name}
             onChange={(e) => changeName(e)}
             autoFocus 
           />
           {/* autoFocus:  automatically get focus when the page loads */}
-        </label>
-        <button
+        </Label>
+        <Button
           onClick={() => console.log("do nothing on name change")}
         >
           Change animal name 
-        </button>
-      </div>
-      <div>
-        <label>
+        </Button>
+      </FormGroup>
+      <FormGroup>
+        <Label>
           Enter animal type: 
-          <input
+          <Input
             aria-label="Set input animal type"
             value={inputAnimal.type}
             onChange={(e) => setInputAnimal({ ...inputAnimal, type: e.target.value})}
           />
-        </label>
-        <button
+        </Label>
+        <Button
           onClick={() => dispatch(switcheroo(inputAnimal.type))}
         >
           Change animal type 
-        </button>
-        <button
+        </Button>
+        <Button
           aria-label="Change to wolf"
           onClick={() => {
             //console.log("About to dispatch(turnIntoWolf)");
@@ -111,17 +147,17 @@ export function Animal() {
           }}
         >
           Change name to wolf
-        </button>
-        <button
+        </Button>
+        <Button
           aria-label="Make it cute"
           onClick={() => dispatch(makeItCute())}
         >
           Make it cute 
-        </button>
-      </div>
+        </Button>
+      </FormGroup>
       {/* radio buttons for areVaccinesUpToDate and isSpayedNeutered */}
       <div>
-        <h6>Are vaccines up to date?</h6>
+        <H6>Are vaccines up to date?</H6>
         <input type="radio" id="yes" name="areVaccinesUpToDate" value="yes"
           onChange={handleRadioButtonChange}
         />
@@ -132,7 +168,7 @@ export function Animal() {
         <label htmlFor="no">no</label>
       </div>
       <div>
-        <h6>Is spayed / neutered?</h6>
+        <H6>Is spayed / neutered?</H6>
         <input type="radio" id="yes" name="isSpayedNeutered" value="yes"
           onChange={handleRadioButtonChange}
         />
@@ -146,7 +182,7 @@ export function Animal() {
       {/* checkboxes for requestGroomingService, requestMedicalCheckup, 
           requestDentalCheckup, and requestGourmetMeal*/}
       <div>
-        <h6>Do you request any of these additional services</h6>
+        <H6>Do you request any of these additional services</H6>
         <input type="checkbox" id="groomingService" name="requestGroomingService" value="yes"
           onChange={handleCheckboxChange}
         />
@@ -165,9 +201,9 @@ export function Animal() {
         />
         <label htmlFor="gourmetMeal" style={{color: "grey"}}>Request gourmet meal (currently not available)</label>
       </div>
-      <div>
+      <SubmitDiv>
         <input type="submit" />
-      </div>
+      </SubmitDiv>
     </form>
   );
 }
