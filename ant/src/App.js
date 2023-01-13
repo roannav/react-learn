@@ -5,6 +5,7 @@ import { Layout, Typography, theme } from 'antd';
 import 'antd/dist/reset.css';
 import './App.css';
 import MainContent from './MainContent';
+import TableContent from './TableContent';
 import Sidebar from './Sidebar';
 
 const { Header, Footer } = Layout;
@@ -26,6 +27,7 @@ function App() {
       <Layout className="site-layout">
         <Sidebar />
         <MainContent /> 
+        <TableContent />
       </Layout>
       <Footer style={{ textAlign: 'center', }}>Footer</Footer>
     </Layout>
