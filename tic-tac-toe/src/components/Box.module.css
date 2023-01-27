@@ -1,0 +1,12 @@
+.box {
+  background: #fff;
+  border: 0.1875em solid blue;
+  border-radius: 0.375em;
+  color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 2.125rem;
+  padding: 0;
+  text-align: center;
+  width: 2.125rem;
+}

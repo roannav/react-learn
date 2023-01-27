@@ -1,0 +1,11 @@
+.board {
+  background-color: blue;
+  border: 0.375em solid blue;
+  border-radius: 0.375em;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.board_row {
+  display: inline-flex;
+}
