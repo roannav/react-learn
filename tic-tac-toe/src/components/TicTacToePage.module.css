@@ -10,7 +10,14 @@ body {
   align-items: center;
 }
 
+h1 {
+  font-family: 'Butterfly Kids', cursive;
+  font-size: 2rem;
+}
+
 .message {
   font-size: 1rem;
+  font-weight: bold;
+  color: darkviolet;
   margin-bottom: 0.8em;
 }
