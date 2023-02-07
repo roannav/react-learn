@@ -9,21 +9,15 @@ export default function Board({ onClick, boxes }) {
 
   return (
     <div className={styles.board}>
-      <div className={styles.board_row}>
         {aBox(0)}
         {aBox(1)}
         {aBox(2)}
-      </div>
-      <div className={styles.board_row}>
         {aBox(3)}
         {aBox(4)}
         {aBox(5)}
-      </div>
-      <div className={styles.board_row}>
         {aBox(6)}
         {aBox(7)}
         {aBox(8)}
-      </div>
     </div>
   );
 }

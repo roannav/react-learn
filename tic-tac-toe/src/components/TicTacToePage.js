@@ -62,6 +62,9 @@ export default function TicTacToePage() {
       <h1>Tic Tac Toe</h1>
       <div className={styles.message}>{getMessage(boxes, currentPlayer)}</div>
       <Board onClick={onBoxClick} boxes={boxes} />
+      <button className={styles.command} onClick={() => console.log("Play again clicked")}>
+        Play again
+      </button>
     </div>
   );
 }

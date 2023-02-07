@@ -3,9 +3,10 @@
   border: 0.375em solid blue;
   border-radius: 0.375em;
   display: inline-flex;
-  flex-direction: column;
-}
-
-.board_row {
-  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
 }
