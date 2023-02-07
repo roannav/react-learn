@@ -22,7 +22,7 @@ h1 {
   margin-bottom: 0.8em;
 }
 
-button.command {
+.button {
   background-color: darkviolet;
   border: none;
   border-radius: 0.375em;
@@ -33,4 +33,9 @@ button.command {
   margin-top: 0.8em;
   padding: 0.6em 1.1em;
   text-decoration: none;
+}
+
+.button:hover,
+.button:focus {
+    opacity: .75;
 }
