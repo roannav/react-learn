@@ -30,13 +30,22 @@ const getWinner = (boxes) => {
   return null;
 };
 
+const isTie = (boxes) => {
+  return !(boxes.some((item) => item == null));
+}
+
 const isGameOver = (boxes) => {
-  return getWinner(boxes) != null;
+  return isTie(boxes) || getWinner(boxes) != null;
 };
 
 const getMessage = (boxes, currentPlayer) => {
+  console.log('boxes');
+  console.log(boxes);
+  if (!isGameOver(boxes))
+    return currentPlayer + "'s turn";
+
   const winner = getWinner(boxes);
-  return winner ? winner + " wins!" : currentPlayer + "'s turn";
+  return winner ? winner + " wins!" : "It's a tie.";
 };
 
 export default function TicTacToePage() {
