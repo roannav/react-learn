@@ -1,6 +1,8 @@
 {
   "name": "reactlab",
   "private": true,
+  "homepage": "https://roannav.github.io/react-learn/meta-w4",
+
   "dependencies": {
     "antd": "^5.0.5",
     "nginx-conf": "^2.1.0",
@@ -13,7 +15,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "preddeploy": "npm run build",
+    "deploy": "./node_modules/gh-pages/bin/gh-pages-clean.js && gh-pages -d build -e tic-tac-toe",
+    "gh-pages-help": "gh-pages --help"
   },
   "browserslist": {
     "production": [
@@ -26,5 +31,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
