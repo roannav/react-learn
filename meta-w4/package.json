@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "preddeploy": "npm run build",
-    "deploy": "./node_modules/gh-pages/bin/gh-pages-clean.js && gh-pages -d build -e tic-tac-toe",
+    "deploy": "./node_modules/gh-pages/bin/gh-pages-clean.js && gh-pages -d build -e meta-w4",
     "gh-pages-help": "gh-pages --help"
   },
   "browserslist": {
