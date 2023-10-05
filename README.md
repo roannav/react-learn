@@ -11,3 +11,7 @@ This repo contains small projects, coursework, and test / play snippets of React
 [![Tic Tac Toe game made with React](tic-tac-toe/public/img/tictactoe.png)](tic-tac-toe/)
 
 [Tic Tac Toe game](tic-tac-toe/)
+
+[![Ant Design Components in a React App](ant/public/img/ant.png)](ant/)
+
+[Ant Design Components in a React App](ant/)
